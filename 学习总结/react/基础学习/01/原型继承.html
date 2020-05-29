@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 原理就是   利用prototype属性在原型上面加属性 fnName 和 fnAge  然后new一个Add 最后利用fn构造函数.出来fnName 和 fnAge */
+        function Add(name, age) {
+            this.name = name
+            this.age = age
+        }
+        // 利用原型来继承
+        Add.prototype.fnName = function(){
+            alert(`我的名字是${this.name}`)
+        }
+        Add.prototype.fnAge = function(){
+            alert(`我的年纪是${this.age}`)
+        }
+        let fn = new Add('谢宇','22')
+        fn.fnName()
+        fn.fnAge()
+    </script>
+</body>
+
+</html>

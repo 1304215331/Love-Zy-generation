@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            margin-left: 200px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid pink;"></canvas>
+    <canvas id="myCanvas2" width="200" height="100" style="border:1px solid rebeccapurple;"></canvas>
+    <canvas id="myCanvas3" width="200" height="100" style="border: 1px solid yellow;"></canvas>
+    <!-- 渐变 -->
+    <canvas id="myCanvas4" width="200" height="100" style="border:1px solid green"></canvas>
+    <!-- 图片 -->
+    <canvas id="myCanvas5" width="1000" height="500" style="border: 1px solid red;"></canvas>
+</body>
+<script>
+    // 初体验
+    var e = document.getElementById('myCanvas'); // 获取dom元素   
+    // canvas本身没有绘图能力  创建context对象
+    cxt = e.getContext('2d') // getContext对象是h5内置的对象  里面有各种绘图属性
+    cxt.fillStyle = "#FF0000"; // 图形颜色
+    cxt.fillRect(20, 20, 100, 50); // 左边距  右边距  长 宽
+    // 画一条线
+    var e2 = document.getElementById('myCanvas2');
+    var cxt2 = e2.getContext("2d");
+    cxt2.moveTo(10, 10); // 从哪里开始
+    cxt2.lineTo(150, 50); // 从哪里结束
+    cxt2.lineTo(10, 50); // 从哪里结束
+    cxt2.stroke(); // 开启画边框
+    // 画一个圆
+    var e3 = document.getElementById('myCanvas3');
+    var cxt3 = e3.getContext("2d")
+    cxt3.fillStyle = "#FF0000";
+    cxt3.beginPath(); // 开启画路径
+    cxt3.arc(70, 18, 15, 0, Math.PI * 2, true); // 画圆 参数：原点X、原点Y、原点起始弧度，原点结束弧度、顺时针/逆时针
+    cxt3.closePath(); // 关闭画路径
+    cxt3.fill(); // 填充
+    // 渐变  目前还看不懂
+    var e4 = document.getElementById('myCanvas4');
+    var cxt4 = e4.getContext("2d")
+    var grd = cxt4.createLinearGradient(0, 0, 175, 50)
+    grd.addColorStop(0, "#ff0000")
+    grd.addColorStop(1, "#00ff00")
+    cxt4.fillStyle = grd
+    cxt4.fillRect(0, 0, 175, 50)
+    // 画个图片
+    var e5 = document.getElementById("myCanvas5");
+    var cxt5 = e5.getContext("2d");
+    var img = new Image()
+    console.log(img);
+    img.src = "/flower.png"
+    cxt5.drawImage(img, 0, 0);
+</script>
+
+</html>

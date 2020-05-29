@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class Son extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    list:[
+                        {
+                            name:'张三',
+                            age:'12'
+                        },
+                        {
+                            name:'李四',
+                            age:'13'
+                        },
+                        {
+                            name:'王五',
+                            age:'14'
+                        },
+                        {
+                            name:'周六',
+                            age:'15'
+                        }
+                    ]
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        {this.state.list.map((item,index)=>{
+                            return (
+                                <ui key="index">
+                                    <li>我的姓名是{item.name}</li>
+                                    <li>我的年龄是{item.age}</li>
+                                </ui>
+                            )
+                        })}
+                    </div>
+                )
+            }
+        }
+         ReactDOM.render(<Son /> ,document.getElementById('app'))
+    </script>
+</body>
+</html>

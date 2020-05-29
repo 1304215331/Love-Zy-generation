@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./js/react.development.js"></script>
+<script src="./js/react-dom.development.js"></script>
+<script src="./js/babel.min.js"></script>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    class Son extends React.Component {
+        fnClick = ()=>{
+            console.log('点了我,我好开心啊');
+        }
+        fnClick1 = (num)=>{
+            console.log(num);
+        }
+        render() {
+            return (
+                <div>
+                    <p onClick={this.fnClick}>点我一下啊</p>
+                    <p onClick={()=>{this.fnClick1('谢宇你好帅的')}}>我是一种传参的点击事件</p>
+                </div>
+            )
+        }
+    }
+     ReactDOM.render(<Son />,document.getElementById('app'))
+</script>
+
+</html>

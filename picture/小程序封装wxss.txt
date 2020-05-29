@@ -1,0 +1,15 @@
+抽取出来的wxss的文件夹
+
+configuration.wxss :  封装的是支付页面的一些全局样式
+lecturer.wxss : 封装的是讲师页面的一些样式
+myGuiFan.wxss : 封装的是一些设计规范
+myList.wxss : 封装的是一些列表布局
+myData.wxss : 封装的是我的资料里面一些输入框
+
+
+
+
+
+
+
+input框改变光标颜色 caret-color:#3C82FF;

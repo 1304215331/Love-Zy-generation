@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用constructor实现继承
+        class Add {
+            constructor(name,age){
+                this.name = name 
+                this.age = age
+            }
+            fnName(){
+                alert(`我的名字是${this.name}`)
+            }
+            fnAge(){
+                alert(`我的年纪是${this.age}`)
+            }
+        }
+        let fn = new Add('张三','30')
+        alert(fn.name)
+        fn.fnAge()
+        // 利用 extends 关键字 和 super来继承Add的属性
+        class SetAdd extends Add{
+            constructor(name,age,study) {
+                super(name,age)
+                this.study = study
+            }
+            fnStudy(){
+                console.log(`我学习的是${this.study}`)
+            }
+            fnAge1(){
+                console.log(`我的年龄是${this.age}`)
+            }
+        }
+        let box = new SetAdd('小明','50','React')
+        box.fnStudy()
+        box.fnAge1()
+        box.fnName() // 这个fnName是继承的Add方法
+    </script>
+</body>
+</html>

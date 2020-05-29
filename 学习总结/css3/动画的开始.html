@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title></title>
+<style>
+* {
+padding: 0;
+margin: 0;
+}
+div {
+width: 882px;
+height: 330px;
+margin: 200px auto;
+overflow: hidden;
+}
+div > ul {
+/*设置ul的宽度为2倍div的宽度*/
+width: 200%;
+list-style: none;
+/*动画属性*/
+animation: imgMove 5s linear infinite;
+
+}
+/* 暂停动画 */
+div>ul:hover{
+animation-play-state: paused;
+}
+
+div > ul > li {
+width: 441px;
+float: left;
+}
+
+div img {
+width: 100%;
+}
+/*创建动画*/
+@keyframes imgMove {
+from {
+transform: translateX(0px);
+}
+to {
+transform: translateX(-882px);
+}
+}
+</style>
+</head>
+<body>
+<div>
+<ul>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<!--将需要轮播的图片在复制一份-->
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+<li><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt=""/></li>
+</ul>
+</div>
+</body>
+</html>

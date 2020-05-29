@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con {
+			width: 600px;
+			margin: 50px auto 0;
+		}
+
+		.inputtxt {
+			width: 550px;
+			height: 30px;
+			border: 1px solid #ccc;
+			padding: 0px;
+			text-indent: 10px;
+		}
+
+		.inputbtn {
+			width: 40px;
+			height: 32px;
+			padding: 0px;
+			border: 1px solid #ccc;
+		}
+
+		.list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			margin-top: 20px;
+		}
+
+		.list li {
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.list li span {
+			float: left;
+		}
+
+		.list li a {
+			float: right;
+			text-decoration: none;
+			margin: 0 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/react.development.js"></script>
+	<script type="text/javascript" src="js/react-dom.development.js"></script>
+	<script type="text/javascript" src="js/babel.min.js"></script>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script type="text/babel">
+		class Todolist extends React.Component{
+			constructor(props){
+				super(props);
+				this.state = {
+					sTodo:'',
+					aList:['学习HTML','学习JavaScript','学习Python']
+				}
+			}
+            del=(index)=>{
+                this.setState((state)=>{
+                    state.aList.splice(index,1)
+                    return{
+                        aList:state.aList
+                    }
+                })
+            }
+            /* 实现双向数据绑定 */
+            model=(e)=>{
+                this.setState({
+                    [e.target.name]:e.target.value
+                })
+            }
+            /* 添加数据 */
+            add=()=>{
+                let value = this.state.sTodo
+                if(value == ''){
+                    alert('请输入添加数据')
+                    return
+                }
+                this.setState((state)=>{
+                    state.aList.push(value)
+                    return{
+                        aList:state.aList,
+                        sTodo: ''
+                    }
+                })
+            }
+			render() {
+				let {aList,sTodo} = this.state;
+				return (
+					<div className="list_con">
+						<h2>To do list</h2>
+						<input type="text" name="sTodo"  id="txt1" className="inputtxt" onChange={this.model} value={sTodo}/>
+						<input type="button" name="" value="增加" id="btn1" className="inputbtn" onClick={this.add}/>
+						<ul id="list" className="list">
+                            {aList.map((item,index)=>
+                                <li key={index}>
+                                    <span>{item}</span> <a href="javascript:;" className="del" onClick={()=>{this.del(index)}}>删除</a>
+                                </li>
+                            )}
+						</ul>
+                        {aList.length == 0 &&(
+                            <li>暂无数据</li>
+                        )}
+					</div>
+				)
+			}
+		}
+		ReactDOM.render(< Todolist />,document.getElementById('root'));
+	</script>
+</body>
+
+</html>

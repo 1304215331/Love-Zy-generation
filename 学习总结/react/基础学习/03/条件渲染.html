@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<style>
+    .bold{
+        font-size: 30px;
+        font-weight: 600;
+        color: #000000;
+    }
+</style>
+<body>
+    <div id="app"></div>
+    <div id="map"></div>
+    <div id="box"></div>
+    <script type="text/babel">
+    /* 条件渲染1 */
+        function Login(props){
+            if(props.isLogin){
+                return (
+                    <div className="bold">
+                        欢迎登陆,亲爱的谢宇
+                    </div>
+                )
+            }
+            else{
+                return(
+                    <div className="bold">请先登陆</div>
+                )
+            }
+        }
+         ReactDOM.render(<Login isLogin={false}/>,document.getElementById('app')) /* 条件渲染,如果穿个false  就会显示请先登陆  如果穿true  就是显示欢迎登陆 */
+    /* 条件渲染2 */
+        function Login1(){
+            return (
+                <h2>你好哦,小老弟</h2>
+            )
+        }
+        function Login2(){
+            return(
+                <h2>你不好</h2>
+            )
+        }
+        function IsLoginTop(props){
+            if(props.isLogin){
+                return <Login1 />
+            }
+            else{
+                return <Login2 />
+            }
+        }
+         ReactDOM.render(< IsLoginTop isLogin={true}/>,document.getElementById('map')) /* 条件渲染  如果穿true就掉Login1  如果传false就掉Login2 */
+        /* 条件渲染3  使用&& 来实现条件渲染*/
+        class Son extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    name: '张三',
+                    msg: ['第一','第二']
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        {this.state.msg.length>0 &&(
+                            <li>你有{this.state.msg.length}条消息</li>
+                        )}
+                    </div>
+                )
+            }
+        }
+         ReactDOM.render(<Son />,document.getElementById('box'))
+    </script>
+</body>
+</html>

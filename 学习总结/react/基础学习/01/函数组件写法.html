@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    function Son(props) {
+        return (
+            <div>
+                <p>姓名:{props.name}</p>
+                <p>年龄:{props.age}</p>
+            </div>
+        )
+    }
+    let jsx = (
+        <div>
+            <p>哈哈哈</p>
+            <Son name="谢宇" age="23" />
+            <Son />
+        </div>
+    )
+    ReactDOM.render(jsx, document.getElementById('app'))
+</script>
+
+</html>

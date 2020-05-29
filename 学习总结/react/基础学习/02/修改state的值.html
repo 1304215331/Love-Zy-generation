@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<style>
+    .p {
+        font-size: 30px;
+        color: aqua;
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    class Son extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                num: 10,
+                name: '呵呵'
+            }
+        }
+        /* 对象修改法 */
+        setState1 = () => {
+            // this.setState({num:this.state.num + 1})
+            // this.setState({num:++this.state.num})
+        }
+        setState2 = () => {
+            /* this.setState((stare,props)=>{
+                return{
+                    num: stare.num+1,
+                    name: '谢宇'
+                }
+            }) */
+            this.setState((state,props)=>({
+                num:11,
+                name:"谢宇"
+            }))
+        }
+        render() {
+            return (
+                <div>
+                    <p className="p">{this.state.num}</p>
+                    <p className="p">{this.state.name}</p>
+                    {/*  <input type="button" name="" value="点我改带你数字哦" id="" onClick={this.setState1}/> */}
+                    <input type="button" value="点我修改" name="" id="" onClick={this.setState2} />
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<Son />, document.getElementById('app'))
+</script>
+
+</html>

@@ -1,0 +1,9 @@
+pages/training/checkOrder 页面参数 training_id=150&allow_discount=0  完成
+
+
+
+
+
+pages/myOrder/attOrderDetail  id=900  套餐  包含课程1个
+			      id=901  套餐  包含课程2个
+			      id=902  线下课程

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raect</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+
+<style>
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    <div id="add"></div>
+</body>
+<script type="text/babel">
+    let srting = "http://www.baidu.com"
+    let num = 20
+    let fn = (a) => {
+        return `${a}你好啊`
+    }
+    let src = "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2441884674,1481124346&fm=26&gp=0.jpg"
+    let jsx = (
+        <div>
+            {/* 注释写法必须加个{} */}
+            <h1>Hello World!</h1>
+            {/* 在jsx里面写class必须加name */}
+            <p className="red">我是红色的</p>
+            {/* 在jsx里面的单标签必须在标签后面加个/ */}
+            <img src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3612860753,3233719888&fm=26&gp=0.jpg" alt="" />
+            <img src={src} alt="" />
+            {/* 在jsx里面使用变量 */}
+            <p>{num}</p>
+            <p>{srting.split('//')[1]}</p>
+            {/* 在jsx里面使用函数 */}
+            <p>{fn('谢宇')}</p>
+            {/* 在jsx里面使用三元表达式 */}
+            <p>{(num == '100')?'就这':''}</p>
+            {/* 使用style样式  注意  如果有-改成驼峰命名法*/}
+            <p style={{'fontSize':'30px','color':'pink'}}>使用style样式</p>
+        </div>
+    )
+    ReactDOM.render(jsx, document.getElementById('add'))
+</script>
+
+</html>

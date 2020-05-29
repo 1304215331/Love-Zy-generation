@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class Son extends React.Component{
+            constructor(props){
+                super(props)
+                this.ref = React.createRef() /* 调用访问ref的函数 */
+                this.xieyu = "哈哈哈哈哈哈"
+            }
+            componentDidMount(){ /* 相当于vue中mountd */
+                this.ref.current.focus() /* current访问这个标签 */
+                console.log(this.xieyu);
+            }
+            render(){
+                return(
+                    <input type="text" ref={this.ref} />
+                )
+            }
+        }
+         ReactDOM.render(<Son />,document.getElementById('app'))
+    </script>
+</body>
+</html>

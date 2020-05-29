@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./js/react.development.js"></script>
+<script src="./js/react-dom.development.js"></script>
+<script src="./js/babel.min.js"></script>
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    class Son extends React.Component{
+        render(){
+            return(
+                <div>{this.props.name}</div>
+            )
+        }
+    }
+     ReactDOM.render(<Son  name="谢宇"/>,document.getElementById('app'))
+</script>
+</html>

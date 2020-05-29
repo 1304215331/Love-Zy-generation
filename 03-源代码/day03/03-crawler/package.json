@@ -1,0 +1,16 @@
+{
+  "name": "03-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-crawler基本使用.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crawler": "^1.2.1",
+    "jquery": "^3.4.1"
+  }
+}
