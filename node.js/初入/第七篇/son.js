@@ -86,8 +86,8 @@ let setOneData = (req, res) => {
         }
         var list = {}
         data.map((item, index) => {
-            if (data[index].id == req.body.id) {
-                list = data[index]
+            if (item.id == req.body.id) {
+                list = item
             }
         })
         res.send({
@@ -107,6 +107,12 @@ let setDataPost = (req, res) => {
     })
     sql.connect()
     let setValue = "UPDATE websites SET name=?,url=?,alexa=?,country=? WHERE id = ?"
+    console.log(`
+        前端传的的name:${req.body.name}
+        前端传的的url:${req.body.url}
+        前端传的的alexa:${req.body.alexa}
+        前端传的的country:${req.body.country}
+    `)
     let {
         name,
         url,
